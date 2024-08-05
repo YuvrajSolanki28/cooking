@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
-
-import { useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -21,13 +20,20 @@ const Navbar = () => {
             <ion-icon name={open ? "close" : "menu"}></ion-icon>
           </div>
           <ul className = {`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 tarnsition-all duration-500 ease-in ${open ? 'top-20 opacity-100':'top-[-490px]'} md:opacity:100`}>
-              <div className="md:ml-8 text-xl md:my-0 my-7">
-                <button
-                onClick={()=>navigate("/login")} 
-                className="text-gray-800 hover:text-gray-400 duration-500 cursor-pointer">
-                  Login
-                </button>
-              </div>
+              <li className="md:ml-8 text-xl md:my-0 my-7">
+                <Link
+                  to="/"
+                  onClick={()=>navigate("/login")} 
+                  className="text-gray-800 hover:text-gray-400 duration-500 cursor-pointer">
+                    Home
+                </Link>
+                <Link
+                  to="/login"
+                  onClick={()=>navigate("/login")} 
+                  className="text-gray-800 hover:text-gray-400 duration-500 cursor-pointer">
+                    Login
+                </Link>
+              </li>
           </ul>
         </div>
       </div>
